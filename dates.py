@@ -24,7 +24,8 @@ df.loc[df["id"]==183]  ## Access a group of rows and columns by label(s) or a bo
 
 # I defined the before and after element here.
 
-def two_way_linked(df,rank):
+##Tulostetaan edellinen ja seuraava päivämäärä
+def two_way_linked(df,rank): # The rank() function is used to compute numerical data ranks (1 through n) along axis. By default, equal values are assigned a rank that is the average of the ranks of those values.
     before_element = df.loc[df["id"] == rank-1]  # Here I call the 182.element
     first_element = df.loc[df["id"]==rank]
     after_element = df.loc[df["id"] == rank+1] # here I call the 184.element
@@ -46,7 +47,7 @@ day_divide_three_not_six(df,"days")
 
 ### Käännetään listan elementit toisinpäin eli 13.1.2023 on esimmäinen elementti ja 1.1.2022 on viimeinen.
 def reverse_dataframe(df):
-    return df.iloc[::-1]
+    return df.iloc[::-1]  ### .iloc[] is primarily integer position based (from 0 to length-1 of the axis)
 
 
 
@@ -77,4 +78,4 @@ third_df = pd.DataFrame()
 
 third_df["dates"] = (second_df["dates"] - firs_df["dates"]) / np.timedelta64(1,"D")
 
-third_df.head(1) # first index
+third_df.head(1) # first index (ensimmäinen indeksi)
